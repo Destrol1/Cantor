@@ -38,4 +38,11 @@ public class Helper {
         float calculate = rate * amount;
         return tradeModel.value = calculate;
     }
+//todo
+//    public float currencyPair (String c1, String c2){
+//        if(c1 + c2 == "EUR" + "USD") {
+//            tradeModel.rate=3;
+//         else if(c1 + c2 == "EUR" + "GPB")
+//        }
+//    }
 }
