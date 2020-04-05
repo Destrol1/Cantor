@@ -16,3 +16,4 @@ public class Client {
         return klient.dane;
     }
 }
+//todo dodokonczenia

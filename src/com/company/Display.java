@@ -1,6 +1,6 @@
 package com.company;
 
-public class Dispaly {
+public class Display {
     public static Currency currency = new Currency();
     public static TradeDate tradeDate = new TradeDate();
     public static Helper helper = new Helper();

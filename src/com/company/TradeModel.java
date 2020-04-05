@@ -11,6 +11,7 @@ public class TradeModel
     public String currency2;
 
     public TradeModel(){
-    };
+
+    }
 
 }
