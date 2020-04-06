@@ -7,9 +7,14 @@ public class Currency {
     public TradeModel tradeModel = new TradeModel();
 
     public void setCurrency1(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Provide currency1: ");
-        String currency1 = scan.nextLine();
+
+        Scanner scanner = new Scanner(System.in);
+        String currency1;
+        do {
+            System.out.print("Provide currency1: /EUR/USD/GBP/PLN \n");
+            currency1 = scanner.nextLine();
+        }
+        while (!"EUR".equals(currency1) && !"USD".equals(currency1)&& !"GBP".equals(currency1)&& !"PLN".equals(currency1));
         tradeModel.currency1 = currency1;
     }
 
@@ -18,9 +23,13 @@ public class Currency {
     }
 
     public void setCurrency2(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Provide currency2: ");
-        String currency2 = scan.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        String currency2;
+        do {
+            System.out.print("Provide currency2: /EUR/USD/GBP/PLN \n");
+            currency2 = scanner.nextLine();
+        }
+        while (!"EUR".equals(currency2) && !"USD".equals(currency2)&& !"GBP".equals(currency2)&& !"PLN".equals(currency2));
         tradeModel.currency2 = currency2;
     }
 
