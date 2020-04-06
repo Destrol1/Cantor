@@ -16,3 +16,4 @@ public class TradeDate {
     }
 
 }
+//todo zrobić wybieranie daty
