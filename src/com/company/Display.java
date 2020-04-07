@@ -19,7 +19,8 @@ public class Display {
         currency.setCurrency2();
         helper.setCurrencyPair(currency.getCurrency1(), currency.getCurrency2());
         //calculate transaction
-        System.out.print(helper.calculate(helper.getRate(), helper.getAmount()));//helper.getRate musi zosatać
-
+        System.out.print("wynik transakcji " + helper.calculate(helper.getRate(), helper.getAmount())+ currency.getCurrency2());
+        //helper.getRate musi zosatać
+        helper.saveData();
     }
 }
