@@ -3,6 +3,7 @@ package com.company;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.Formatter;
 import java.util.Scanner;
 
@@ -61,11 +62,11 @@ public class Helper {
     }
 
     public void setCurrencyPair (String ccy1, String ccy2) {
-        tradeModel.ccurencyPair = ccy1 + ccy2;
+        tradeModel.currencyPair = ccy1 + ccy2;
     }
 
     public String getCurrencyPair (){
-        return tradeModel.ccurencyPair;
+        return tradeModel.currencyPair;
     }
 
     public void setAmount () {
@@ -141,8 +142,15 @@ public class Helper {
         }
     }
 
-    public void Table (){
-        String[] table =
+    public void table () throws FileNotFoundException {
+        Scanner s = new Scanner(new File("transaction.txt"));
+        ArrayList<String> listS = new ArrayList<String>();
+        ArrayList<Integer> listI = new ArrayList<Integer>();
+        while(s.hasNextLine())
+            listS.add(s.nextLine());
+
+        System.out.println(listS);
+
     }
 
 

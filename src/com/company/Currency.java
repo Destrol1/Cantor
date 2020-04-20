@@ -31,10 +31,8 @@ public class Currency {
         while (!"EUR".equals(currency2) && !"USD".equals(currency2)&& !"GBP".equals(currency2)&& !"PLN".equals(currency2));
         tradeModel.currency2 = currency2;
     }
-
     public String getCurrency2() {
         return tradeModel.currency2;
     }
-
 }
 

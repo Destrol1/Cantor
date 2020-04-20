@@ -10,6 +10,7 @@ public class Main {
         display.displayTransaction();
         helper.saveData();
         helper.readData();
+        helper.table();
     }
 }
 
