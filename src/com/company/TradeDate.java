@@ -5,15 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TradeDate {
-
     public TradeModel tradeModel = new TradeModel();
+    public Date date = new Date();
 
-    public void getTradeDate () {
+    public String getTradeDate () {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        Date date = new Date();
         tradeModel.tradeDate = dateFormat.format(date);
-        System.out.println(dateFormat.format(date));
+        return tradeModel.tradeDate;
     }
-
 }
 //todo zrobić wybieranie daty

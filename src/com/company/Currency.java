@@ -3,11 +3,9 @@ package com.company;
 import java.util.Scanner;
 
 public class Currency {
-
     public TradeModel tradeModel = new TradeModel();
 
     public void setCurrency1(){
-
         Scanner scanner = new Scanner(System.in);
         String currency1;
         do {

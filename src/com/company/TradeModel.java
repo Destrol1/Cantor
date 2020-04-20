@@ -9,9 +9,7 @@ public class TradeModel
     public float value;
     public String currency1;
     public String currency2;
-
+//    public String calosc;
     public TradeModel(){
-
     }
-
 }

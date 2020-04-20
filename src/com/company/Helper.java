@@ -6,8 +6,10 @@ import java.util.Formatter;
 import java.util.Scanner;
 
 public class Helper {
-
     public static TradeModel tradeModel = new TradeModel();
+    public static TradeDate tradeDate = new TradeDate();
+    public static Currency currency = new Currency();
+    public static Display display = new Display();
 
 //    public void zapisDopliku () throws FileNotFoundException {
 //        PrintWriter zapis = new PrintWriter("tranzakcje.txt");
@@ -42,9 +44,10 @@ public class Helper {
         return tradeModel.value = calculate;
     }
 
-    public void setCurrencyPair (String c1, String c2){
-        String pair;
 
+
+    public void setCurrencyPair (String c1, String c2) {
+        String pair;
         pair = c1 + c2;
 
 //        System.out.print(pair);
@@ -113,27 +116,30 @@ public class Helper {
            try {
                FileWriter fileSave = new FileWriter(f, true);       //zapisywanie do pliku //dolącza na koncu pliku nowe dane
                Formatter addFile = new Formatter(fileSave);    //formater pozwala formatowac wejsciowe dane
-               Scanner scannerFile = new Scanner(f); // zczytywanie z pliku
+//               Scanner scannerFile = new Scanner(f); // zczytywanie z pliku
                Scanner sc = new Scanner(System.in); //co uruchomienie programu uz dodaje dane a nastepnie wyswietla aktualna zawartosc
                System.out.println("Podaj tekst do pliku ");
-               String tekst = sc.nextLine();
-               addFile.format("%s \r\n", tekst);
+               //String tekst =sc.nextLine(); //todo funkcja
+               addFile.format("%s \r\n", display.transactionContent()); // tu fnkcje
                System.out.println("Zapisano ");
                addFile.close();
                fileSave.close();
-               //odczytywanie
-               System.out.println("Zawartosc pliku: ");
-               while(scannerFile.hasNextLine()){//sprawdzam czy plik pusty
-                   System.out.println(scannerFile.nextLine());
-               }
-               scannerFile.close();
+//               //odczytywanie
+//               System.out.println("Zawartosc pliku: ");
+//               while(scannerFile.hasNextLine()){//sprawdzam czy plik pusty
+//                   System.out.println(scannerFile.nextLine());
+//               }
+//               scannerFile.close();
            }
            catch (Exception error){
                System.out.println(error.getMessage());
            }
         }
-
-
-
     }
+
+
+//    public String getFile () {
+//
+//        return tradeModel.calosc;
+//    }
 }
