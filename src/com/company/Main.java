@@ -8,9 +8,8 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
         display.displayTransaction();
-//        helper.setFile();
-//        helper.getFile();
         helper.saveData();
+        helper.readData();
     }
 }
 

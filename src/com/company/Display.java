@@ -4,8 +4,6 @@ public class Display {
     public static Currency currency = new Currency();
     public static TradeDate tradeDate = new TradeDate();
     public static Helper helper = new Helper();
-    public static TradeModel tradeModel = new TradeModel();
-
 
     public void displayTransaction(){
         System.out.print("------------------------------\n");
@@ -19,11 +17,11 @@ public class Display {
         helper.setAmount();
         currency.setCurrency1();
         currency.setCurrency2();
-
         helper.setCurrencyPair(currency.getCurrency1(), currency.getCurrency2());
-
+        helper.setRate();
         //calculate transaction
-        System.out.print("wynik transakcji " + helper.calculate(helper.getRate(), helper.getAmount())+ currency.getCurrency2());
+        helper.setCalculate(helper.getRate(), helper.getAmount());
+//        System.out.print("wynik transakcji " + helper.getCalculate() + currency.getCurrency2());
         //helper.getRate musi zosatać
         //helper.saveData();
     }
@@ -34,12 +32,9 @@ public class Display {
                         "|\tCurrency1: " + currency.getCurrency1() +
                         "|\tCurrency2: " + currency.getCurrency2() +
                         "|\tAmount: " + helper.getAmount() +
-                        "|\tRate: " + "1.2" +
-                        "|\tValue: " + tradeModel.value +
+                        "|\tRate: " + helper.getRate() +
+                        "|\tValue: " + helper.getCalculate() +
                         "|\tTradeDate: " + tradeDate.getTradeDate();
         return content;
-//        String calosc1 = currency.getCurrency1() + String.valueOf(tradeModel.amount1) + tradeModel.value ;
-//        tradeModel.calosc = calosc1;
     }
-
 }

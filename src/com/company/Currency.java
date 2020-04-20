@@ -10,6 +10,7 @@ public class Currency {
         String currency1;
         do {
             System.out.print("Provide currency1: /EUR/USD/GBP/PLN \n");
+            //todo zmien na duze albo male znaki zeby wszystko zamienialo
             currency1 = scanner.nextLine();
         }
         while (!"EUR".equals(currency1) && !"USD".equals(currency1)&& !"GBP".equals(currency1)&& !"PLN".equals(currency1));

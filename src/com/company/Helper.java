@@ -1,6 +1,7 @@
 package com.company;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.util.Formatter;
 import java.util.Scanner;
@@ -11,55 +12,12 @@ public class Helper {
     public static Currency currency = new Currency();
     public static Display display = new Display();
 
-//    public void zapisDopliku () throws FileNotFoundException {
-//        PrintWriter zapis = new PrintWriter("tranzakcje.txt");
-//        zapis.println("Rate: " + kurs.getKurs() + "\n" + "Amount: " + ilosc.getAmount() + "\n" + "Wartosc: ");
-//        zapis.close();
-//        System.out.print("Rate: " +  kurs.getKurs() + "\n" + "Amount: " + ilosc.getAmount() + "\n" + "Wartosc: " );
-//    }
-//todo zapis do pliku
-
     public void setRate (){
-        Scanner scan = new Scanner(System.in);
-        String rate = scan.nextLine();
-        tradeModel.rate = Float.parseFloat(rate);
-    }
+//        Scanner scan = new Scanner(System.in);
+//        String rate = scan.nextLine();
+//        tradeModel.rate = Float.parseFloat(rate);
 
-    public float getRate (){
-        return tradeModel.rate;
-    }
-
-    public void setAmount () {
-        Scanner scan = new Scanner(System.in);
-        float reader = Float.parseFloat(scan.nextLine());
-        tradeModel.amount1 = reader;
-    }
-
-    public float getAmount () {
-        return tradeModel.amount1;
-    }
-
-    public float calculate (float rate, float amount){
-        float calculate = rate * amount;
-        return tradeModel.value = calculate;
-    }
-
-
-
-    public void setCurrencyPair (String c1, String c2) {
-        String pair;
-        pair = c1 + c2;
-
-//        System.out.print(pair);
-//        if(pair == "EURUSD") {
-//
-//            System.out.print("dziala");
-//        }
-//         else if(pair == "EURGPB"){
-//            System.out.print("nie dziala");
-//        }
-
-        switch (pair) {
+        switch (getCurrencyPair()) {
             case "EURUSD":
                 tradeModel.rate = (float) 1.08;
                 break;
@@ -96,8 +54,39 @@ public class Helper {
             default:
                 System.out.print("Wrong currencies, enter again \n");
         }
-
     }
+
+    public float getRate (){
+        return tradeModel.rate;
+    }
+
+    public void setCurrencyPair (String ccy1, String ccy2) {
+        tradeModel.ccurencyPair = ccy1 + ccy2;
+    }
+
+    public String getCurrencyPair (){
+        return tradeModel.ccurencyPair;
+    }
+
+    public void setAmount () {
+        Scanner scan = new Scanner(System.in);
+        float reader = Float.parseFloat(scan.nextLine());
+        tradeModel.amount1 = reader;
+    }
+
+    public float getAmount () {
+        return tradeModel.amount1;
+    }
+
+    public void setCalculate (float rate, float amount){
+        tradeModel.value = rate * amount;
+    }
+
+    public float getCalculate (){
+        return tradeModel.value;
+    }
+
+
     //todo pobieranie kursów ze strony internetowej
 
     //zapis do pliku ------
@@ -137,9 +126,24 @@ public class Helper {
         }
     }
 
+    public void readData (){
+        try {
+            File myObj = new File("transaction.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
+            }
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
 
-//    public String getFile () {
-//
-//        return tradeModel.calosc;
-//    }
+    public void Table (){
+        String[] table =
+    }
+
+
 }
