@@ -1,6 +1,8 @@
 package com.company;
 
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static Display display = new Display();
@@ -9,8 +11,10 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         display.displayTransaction();
         helper.saveData();
-        helper.readData();
+       // helper.readData();
         helper.table();
+        helper.table1();
+
     }
 }
 

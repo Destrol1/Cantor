@@ -3,9 +3,8 @@ package com.company;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.util.ArrayList;
-import java.util.Formatter;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class Helper {
     public static TradeModel tradeModel = new TradeModel();
@@ -110,7 +109,7 @@ public class Helper {
                Scanner sc = new Scanner(System.in); //co uruchomienie programu uz dodaje dane a nastepnie wyswietla aktualna zawartosc
                System.out.println("Podaj tekst do pliku ");
                //String tekst =sc.nextLine(); //todo funkcja
-               addFile.format("%s \r\n", display.transactionContent()); // tu fnkcje
+               addFile.format("%s \r\n", table()); // tu fnkcje
                System.out.println("Zapisano ");
                addFile.close();
                fileSave.close();
@@ -142,16 +141,54 @@ public class Helper {
         }
     }
 
-    public void table () throws FileNotFoundException {
+    public void table1 () throws FileNotFoundException {
         Scanner s = new Scanner(new File("transaction.txt"));
         ArrayList<String> listS = new ArrayList<String>(); //listS zamieni na funkcje
 //        ArrayList<Integer> listI = new ArrayList<Integer>();
         while(s.hasNextLine())
             listS.add(s.nextLine());
 
+//        System.out.println(listS);
+//        Collections.sort(listS);
+        Collections.sort(listS);
         System.out.println(listS);
 
     }
+        public String table ()  {
+            List<String> lista = new ArrayList<>();
+            lista.add(currency.getCurrency1());
+            lista.add(currency.getCurrency2());
+            lista.add(String.valueOf(getAmount()));
+            lista.add(String.valueOf(getRate()));
+            lista.add(String.valueOf(getCalculate()));
+            lista.add(tradeDate.getTradeDate());
+//            return lista.sort();
+            return String.valueOf(lista);
+        }
+        //--------------------------------------------------------------------------
 
+//    public String sortTable (){
+//        lista
+//        return
+//    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
