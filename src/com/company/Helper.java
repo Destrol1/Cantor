@@ -144,8 +144,8 @@ public class Helper {
 
     public void table () throws FileNotFoundException {
         Scanner s = new Scanner(new File("transaction.txt"));
-        ArrayList<String> listS = new ArrayList<String>();
-        ArrayList<Integer> listI = new ArrayList<Integer>();
+        ArrayList<String> listS = new ArrayList<String>(); //listS zamieni na funkcje
+//        ArrayList<Integer> listI = new ArrayList<Integer>();
         while(s.hasNextLine())
             listS.add(s.nextLine());
 

@@ -28,13 +28,19 @@ public class Display {
 
     public String transactionContent () {
         String content =
-                "Id: " + "cos tam" +
+              //  "Id: " + "cos tam" + //todo numer transakcji
                         "|\tCurrency1: " + currency.getCurrency1() +
                         "|\tCurrency2: " + currency.getCurrency2() +
                         "|\tAmount: " + helper.getAmount() +
                         "|\tRate: " + helper.getRate() +
                         "|\tValue: " + helper.getCalculate() +
                         "|\tTradeDate: " + tradeDate.getTradeDate();
+        return content;
+    }
+    public String cc1ToFile () {
+        String content =
+                currency.getCurrency1();
+
         return content;
     }
 }
