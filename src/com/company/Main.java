@@ -11,9 +11,11 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         display.displayTransaction();
         helper.saveData();
-       // helper.readData();
-        helper.table();
-        helper.table1();
+        helper.readData();
+        //helper.table();
+        //helper.saveToVector();
+       // helper.table1();
+//helper.readVector();
 
     }
 }

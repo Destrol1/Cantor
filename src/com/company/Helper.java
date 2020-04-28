@@ -107,9 +107,10 @@ public class Helper {
                Formatter addFile = new Formatter(fileSave);    //formater pozwala formatowac wejsciowe dane
 //               Scanner scannerFile = new Scanner(f); // zczytywanie z pliku
                Scanner sc = new Scanner(System.in); //co uruchomienie programu uz dodaje dane a nastepnie wyswietla aktualna zawartosc
-               System.out.println("Podaj tekst do pliku ");
+              // System.out.println("Podaj tekst do pliku ");
                //String tekst =sc.nextLine(); //todo funkcja
-               addFile.format("%s \r\n", table()); // tu fnkcje
+            addFile.format("%s \r\n", display.transactionContent()); // tu fnkcje
+            //   addFile.format("%s \r\n", saveToVector()); // tu fnkcje
                System.out.println("Zapisano ");
                addFile.close();
                fileSave.close();
@@ -144,14 +145,12 @@ public class Helper {
     public void table1 () throws FileNotFoundException {
         Scanner s = new Scanner(new File("transaction.txt"));
         ArrayList<String> listS = new ArrayList<String>(); //listS zamieni na funkcje
-//        ArrayList<Integer> listI = new ArrayList<Integer>();
         while(s.hasNextLine())
             listS.add(s.nextLine());
 
-//        System.out.println(listS);
-//        Collections.sort(listS);
-        Collections.sort(listS);
-        System.out.println(listS);
+      System.out.println(listS);
+      Collections.sort(listS);
+      System.out.println(listS);
 
     }
         public String table ()  {
@@ -167,11 +166,28 @@ public class Helper {
         }
         //--------------------------------------------------------------------------
 
-//    public String sortTable (){
-//        lista
-//        return
-//    }
+    public List<Float> saveToVector () {
+        List<Float> amountList = new ArrayList<>();
+       List<Float> valueList = new ArrayList<>();
 
+        amountList.add(getAmount());
+       valueList.add(getCalculate());
+        return amountList;
+    }
+
+//    public void readVector () throws FileNotFoundException {
+//
+//        Scanner s = new Scanner(new File("transaction.txt"));
+//        ArrayList<String> listS = new ArrayList<String>(); //listS zamieni na funkcje
+////        ArrayList<Integer> listI = new ArrayList<Integer>();
+//        while (s.hasNextLine())
+//            listS.add(s.nextLine());
+//
+//        System.out.println(listS);
+//        Collections.sort(listS);
+//
+//        System.out.println(listS);
+//    }
 }
 
 
